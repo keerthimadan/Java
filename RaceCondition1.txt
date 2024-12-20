@@ -1,0 +1,75 @@
+package RaceCondition;
+
+class MSOffice extends Thread {
+	 public void typing(){
+		try {
+			for(int i=0;i<5;i++) {
+			System.out.println("Typing");
+			Thread.sleep(2000);
+		}
+		}
+		catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	 }
+	 public void spellcheck() {
+	try {
+		for(int i=0;i<5;i++) {
+	System.out.println("Spellcheck");
+	Thread.sleep(2000);
+		
+	}
+	}
+	catch(InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+	 public void saving()  {
+	try {
+		for(int i=0;i<5;i++) {
+	
+	System.out.println("Saving");
+	
+		Thread.sleep(2000);
+	} }
+	catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	}
+	
+	 public void run() {
+	if(Thread.currentThread().getName().equals("typing")){
+		typing();
+	}
+	 else if(Thread.currentThread().getName().equals("spellcheck")) {
+		spellcheck(); 
+	 }
+	 else {
+		 saving();
+	 }
+}
+ }
+ 
+package RaceCondition;
+
+public class Start {
+	public static void main(String args[])throws InterruptedException {
+		MSOffice t1=new MSOffice();
+		MSOffice t2=new MSOffice();
+		MSOffice t3=new MSOffice();
+		t1.setName("typing");
+		t2.setName("spellcheck");
+		t3.setName("saving");
+		t1.start();
+		t1.join();
+		t2.start();
+		t2.join();
+		t3.start();
+		t3.join();
+
+	}
+
+}

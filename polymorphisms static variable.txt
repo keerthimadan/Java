@@ -1,0 +1,46 @@
+package polymorphisms;
+
+public class Test {
+	static int a,b,c;
+	int m,n,o;
+	static {
+		a=1;
+		b=2;
+		c=3;
+		//m=4;->instance variable cannot be accessed in static block
+		//n=5;->instance variable cannot be accessed in static block
+		//o=6;->instance variable cannot be accessed in static block
+	}
+	{
+		a=10;//-static variables can be accessed in instance block
+		b=20;//-static variables can be accessed in instance block
+		c=30;//-static variables can be accessed in instance block
+		m=40;
+		n=50;
+		o=60;
+	}
+	static void display() {
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		//System.out.println(m);//->instance variable cannot be accessed in static block
+		//System.out.println(n);//->instance variable cannot be accessed in static block
+		//System.out.println(o);//->instance variable cannot be accessed in static block
+	}
+	void display1() {
+		System.out.println(a);//->static variables can be accessed in normal method
+		System.out.println(b);//->static variables can be accessed in normal method
+		System.out.println(c);//->static variables can be accessed in normal method
+		System.out.println(m);//->instance variables can be accessed in normal method
+		System.out.println(n);//->instancce variables can be accessed in normal method
+		System.out.println(o);//->instance variables can be accessed in normal method
+	}
+}
+class Launch{
+	public static void main(String args[]) {
+		Farmer f=new Farmer();
+		f.CollectData();
+		f.Calculate();
+		f.Display();
+	}
+}

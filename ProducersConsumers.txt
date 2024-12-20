@@ -1,0 +1,49 @@
+package ProducersConsumers;
+
+public class Consumer extends Thread {
+	Queue b;
+	public Consumer(Queue q)
+	{
+		b=q;
+	}
+	@Override
+	public void run() {
+		while(true)
+		{
+			int i=1;
+			b.get(i);
+		}
+	}
+
+}
+package ProducersConsumers;
+
+public class Producer extends Thread{
+	Queue a;
+	public Producer(Queue q)
+	{
+		a=q;
+	}
+	@Override
+	public void run() {
+		int i=0;
+		while(true) {
+			a.put(i);
+			i++;
+		}
+	}
+
+}
+package ProducersConsumers;
+
+public class Queue {
+int data;
+public void put(int i) {
+	data=i;
+	System.out.println("Data Added...The data value is:"+i);
+}
+public void get(int i) {
+	data=i;
+	System.out.println("Data retrived...The data value is:"+i);
+}
+}

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class SingleThreadProgram {
+	@SuppressWarnings({ "resource", "unused" })
+	public static void main(String args[])throws InterruptedException {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Task1:Addition operation started");
+		System.out.println("Enter the first number");
+		int num1=sc.nextInt();
+		System.out.println("Enter the second number");
+		int num2=sc.nextInt();
+		int res=num1+num2;
+		System.out.println("Result is:"+res);
+		System.out.println("Task1:Addition operation completed");
+		System.out.println("Task2:Printting operation started");
+		for(int i = 0;i<5;i++) {
+			System.out.println("Keerthi");
+			Thread.sleep(500);
+		}
+		System.out.println("Task2:Printting operation completed");
+		System.out.println("Task3:Banking operation started");
+		System.out.println("Enter the Account number");
+		int num=sc.nextInt();
+		System.out.println("Please enter the Password");
+		int pass=sc.nextInt();
+		System.out.println("Please enter the Pincode");
+		int pin=sc.nextInt();
+		System.out.println("Task3:Banking operation completed");
+		}
+
+}
